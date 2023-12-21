@@ -36,7 +36,7 @@ export const reslistObj = [
       type: "F",
       id: "46898",
 
-      name: "KFCY",
+      name: "Burger",
       costForTwo: 40000,
       cuisnes: ["Burgers", "Biryani", "American", "Snacks", "Fast Foods"],
       avgRating: "3.8",
@@ -50,7 +50,7 @@ export const reslistObj = [
       id: "4612898",
 
       type: "F",
-      name: "KFCY",
+      name: "Burger King",
       costForTwo: 40000,
       cuisnes: ["Burgers", "Biryani", "American", "Snacks", "Fast Foods"],
       avgRating: "3.8",
@@ -64,7 +64,7 @@ export const reslistObj = [
       id: "45688",
 
       type: "F",
-      name: "KFCY",
+      name: "Samosa",
       costForTwo: 40000,
       cuisnes: ["Burgers", "Biryani", "American", "Snacks", "Fast Foods"],
       avgRating: "3.8",
@@ -78,74 +78,7 @@ export const reslistObj = [
       id: "456898",
 
       type: "F",
-      name: "KFCY",
-      costForTwo: 40000,
-      cuisnes: ["Burgers", "Biryani", "American", "Snacks", "Fast Foods"],
-      avgRating: "3.8",
-      totalRatings: "500",
-      deliveryTime: "38 minutes",
-    },
-  },
-  {
-    type: "restaurtant",
-    data: {
-      id: "456898",
-
-      type: "F",
-      name: "KFCY",
-      costForTwo: 40000,
-      cuisnes: ["Burgers", "Biryani", "American", "Snacks", "Fast Foods"],
-      avgRating: "3.8",
-      totalRatings: "500",
-      deliveryTime: "38 minutes",
-    },
-  },
-  {
-    type: "restaurtant",
-    data: {
-      id: "4656898",
-      type: "F",
-      name: "KFCY",
-      costForTwo: 40000,
-      cuisnes: ["Burgers", "Biryani", "American", "Snacks", "Fast Foods"],
-      avgRating: "3.8",
-      totalRatings: "500",
-      deliveryTime: "38 minutes",
-    },
-  },
-  {
-    type: "restaurtant",
-    data: {
-      id: "4657898",
-      type: "F",
-
-      name: "KFCY",
-      costForTwo: 40000,
-      cuisnes: ["Burgers", "Biryani", "American", "Snacks", "Fast Foods"],
-      avgRating: "3.8",
-      totalRatings: "500",
-      deliveryTime: "38 minutes",
-    },
-  },
-  {
-    type: "restaurtant",
-    data: {
-      id: "46576898",
-      type: "F",
-      name: "KFCY",
-      costForTwo: 40000,
-      cuisnes: ["Burgers", "Biryani", "American", "Snacks", "Fast Foods"],
-      avgRating: "3.8",
-      totalRatings: "500",
-      deliveryTime: "38 minutes",
-    },
-  },
-  {
-    type: "restaurtant",
-    data: {
-      id: "465768798",
-      type: "F",
-      name: "KFCY",
+      name: "Jalebi",
       costForTwo: 40000,
       cuisnes: ["Burgers", "Biryani", "American", "Snacks", "Fast Foods"],
       avgRating: "3.8",
