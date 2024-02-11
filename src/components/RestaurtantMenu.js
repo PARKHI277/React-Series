@@ -29,9 +29,9 @@ const RestrutantMenu = () => {
   const { name, cuisines, costForTwoMessage } =
     resInfo?.cards[0]?.card?.card?.info;
 
-    const { itemCards } =
+  const { itemCards } =
     resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[5].card.card;
-  console.log("itemCards",itemCards)
+  console.log("itemCards", itemCards);
   //   const categories =
   //     resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
   //       (c) =>
@@ -56,7 +56,7 @@ const RestrutantMenu = () => {
       <h2>Menu</h2>
       <ul>
         {itemCards.map((item) => (
-          <li>{item.card.info.name}</li>
+          <li key={item.card.info.id}>{item.card.info.name}</li>
         ))}
       </ul>
     </div>
