@@ -7,6 +7,8 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestrutantMenu from "./components/RestaurtantMenu";
+import ProfileFunction from "./components/Profile";
+// import Profile from "./components/ProfileClass";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 const AppLayout = () => {
@@ -23,14 +25,21 @@ const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
+    errorElement: <Error />,
     children: [
-      {
-        path: "/",
-        element: <Body />,
-      },
       {
         path: "/about",
         element: <About />,
+        children: [
+          {
+            path: "profile",
+            element: <ProfileFunction />,
+          },
+        ],
+      },
+      {
+        path: "/",
+        element: <Body />,
       },
       {
         path: "/contact",
@@ -41,7 +50,6 @@ const appRouter = createBrowserRouter([
         element: <RestrutantMenu />,
       },
     ],
-    errorElement: <Error />,
   },
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
