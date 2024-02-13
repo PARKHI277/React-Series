@@ -7,7 +7,7 @@ const ProfileFunction = (props) => {
   // const [count2] = useState(0);
   useEffect(() => {
     // api call
-  });
+  }, [count]);
   return (
     <div>
       <h1>Profile</h1>
