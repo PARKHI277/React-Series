@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom"; // it wil not refresh page - single page application
+import useOnline from "../utils/useOnline";
 
 const Title = () => {
   <a href="/">
@@ -13,6 +14,9 @@ const Title = () => {
 
 export const Header = () => {
   const [isLoggedIn, setLoggedIn] = useState(true);
+  // const [getLocalVariables, setLocalVariables] = useLocalStorage();
+
+  const isOnline = useOnline();
   return (
     <div className="header">
       <div className="logo-container">
@@ -33,6 +37,9 @@ export const Header = () => {
             <Link to="/contact">Contact us</Link>
           </li>
           <li>Cart</li>
+          <Link to="/instamart">
+            <li>Instmart</li>
+          </Link>
         </ul>
       </div>
 

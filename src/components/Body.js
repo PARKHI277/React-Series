@@ -2,13 +2,9 @@ import RestroCard from "./RestrutantCard";
 import Shimmer from "./Shimmer";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { filterData } from "../utils/helper";
+import useOnline from "../utils/useOnline";
 
-function filterData(searchInput, restaurtants) {
-  const filterData = restaurtants.filter((restaurtant) =>
-    restaurtant.info.name.includes(searchInput)
-  );
-  return filterData;
-}
 // Hooks are normal function. one of them is useStates
 const Body = () => {
   const [listOfRestaurants, setListOfRestraunt] = useState([]);
@@ -32,6 +28,10 @@ const Body = () => {
     );
   }
 
+  const isOnline = useOnline();
+  if (!isOnline) {
+    return <h1>No internt connection</h1>;
+  }
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
@@ -47,7 +47,7 @@ const Body = () => {
               setSearchText(e.target.value);
             }}
           />
-          {/* <h1>{searchClicked}</h1> */}
+
           <button
             className="search-btn"
             onClick={() => {
