@@ -26,7 +26,7 @@ class About extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="text-center">
         <h1>About us Page</h1>
         <h2>This is Namaste React web series</h2>
         <Profile name={"Parkhi class"} xyz="abc" />

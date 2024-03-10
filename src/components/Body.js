@@ -1,15 +1,14 @@
 import RestroCard from "./RestrutantCard";
 import Shimmer from "./Shimmer";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
 import useOnline from "../utils/useOnline";
-
+import UserContext from "../utils/userContext";
 // Hooks are normal function. one of them is useStates
 const Body = () => {
   const [listOfRestaurants, setListOfRestraunt] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
-
   const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
@@ -32,34 +31,58 @@ const Body = () => {
   if (!isOnline) {
     return <h1>No internt connection</h1>;
   }
+  const { loggedInUser, setUserName } = useContext(UserContext);
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
     <>
       <div className="body">
-        <div className="search-container">
-          <input
-            type="text"
-            className="search-input"
-            placeholder="Search"
-            value={searchText}
-            onChange={(e) => {
-              setSearchText(e.target.value);
-            }}
-          />
+        <div className="filter flex">
+          <div className="search m-4 p-4">
+            <input
+              type="text"
+              className="border border-solid border-black"
+              placeholder="Search"
+              value={searchText}
+              onChange={(e) => {
+                setSearchText(e.target.value);
+              }}
+            />
 
-          <button
-            className="search-btn"
-            onClick={() => {
-              // filter data
-              const data = filterData(searchText, listOfRestaurants);
-              setFilteredRestaurant(data);
-            }}
-          >
-            Search
-          </button>
+            <button
+              className="px-4 py-2 bg-green-100 m-4 rounded-lg"
+              onClick={() => {
+                // filter data
+                const data = filterData(searchText, listOfRestaurants);
+                setFilteredRestaurant(data);
+              }}
+            >
+              Search
+            </button>
+          </div>
+          <div className="search m-4 p-4 flex items-center">
+            <button
+              className="px-4 py-2 bg-gray-100 rounded-lg"
+              onClick={() => {
+                const filteredList = listOfRestaurants.filter(
+                  (res) => res.info.avgRating > 3
+                );
+                setListOfRestraunt(filteredList);
+              }}
+            >
+              Top Rated Restaurtants
+            </button>
+          </div>
+          <div className="search m-4 p-4 flex items-center">
+            <label>UserName : </label>
+            <input
+              className="border border-black p-2"
+              value={loggedInUser}
+              onChange={(e) => setUserName(e.target.value)}
+            />
+          </div>
         </div>
-        <div className="res-container">
+        <div className="flex flex-wrap">
           {filteredRestaurant.map((restaurtant) => (
             <Link
               key={restaurtant.info.id}
